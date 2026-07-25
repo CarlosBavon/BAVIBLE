@@ -1,10 +1,19 @@
 .topbar {
-  background: linear-gradient(180deg, var(--indigo) 0%, var(--indigo-deep) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--indigo) 0%,
+    var(--indigo-deep) 100%
+  );
   border-bottom: 3px solid var(--gold);
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 20;
+}
+
+.topbar__wordmark-img {
+  height: 38px;
+  width: auto;
 }
 
 .topbar__row {
@@ -78,7 +87,9 @@
   padding: 6px 14px;
   border-radius: 999px;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
   white-space: nowrap;
 }
 .topbar__pill.is-active {
@@ -180,7 +191,10 @@
     padding: 0 20px;
     border-top: 0px solid rgba(203, 157, 62, 0.25);
     border-bottom: 3px solid var(--gold);
-    transition: max-height 0.22s ease, padding 0.22s ease, border-width 0.22s ease;
+    transition:
+      max-height 0.22s ease,
+      padding 0.22s ease,
+      border-width 0.22s ease;
     background: var(--indigo-deep);
     box-shadow: var(--shadow);
   }

@@ -43,8 +43,7 @@ export default function TopBar({ translation, setTranslation, lens, setLens, onT
         </button>
 
         <Link to="/" className="topbar__wordmark">
-          <span className="topbar__glyph">✠</span>
-          <span className="topbar__title">BAVIBLE</span>
+          <img src="/wordmark-on-dark.svg" alt="BAVIBLE" className="topbar__wordmark-img" />
         </Link>
 
         <div className="topbar__controls topbar__controls--desktop">
