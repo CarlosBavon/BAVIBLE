@@ -1,0 +1,221 @@
+.topbar {
+  background: linear-gradient(180deg, var(--indigo) 0%, var(--indigo-deep) 100%);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.topbar__row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 24px;
+}
+
+.topbar__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+.topbar__burger span {
+  height: 2px;
+  background: var(--vellum-light);
+  border-radius: 2px;
+}
+
+.topbar__wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--vellum-light);
+  flex-shrink: 0;
+}
+.topbar__glyph {
+  color: var(--gold-bright);
+  font-size: 22px;
+}
+.topbar__title {
+  font-family: var(--font-display-deco);
+  font-size: 22px;
+  letter-spacing: 0.14em;
+}
+
+/* ---------- Desktop controls (inline, always visible >860px) ---------- */
+.topbar__controls--desktop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.topbar__group {
+  display: flex;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  padding: 3px;
+  border: 1px solid rgba(203, 157, 62, 0.35);
+}
+
+.topbar__pill {
+  border: none;
+  background: transparent;
+  color: var(--vellum-dark);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+.topbar__pill.is-active {
+  background: var(--gold);
+  color: var(--indigo-deep);
+  font-weight: 600;
+}
+.topbar__pill:hover:not(.is-active) {
+  color: var(--vellum-light);
+}
+
+.topbar__lens {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--vellum-dark);
+}
+.topbar__lens-label {
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.topbar__lens select,
+.topbar__controls--mobile select {
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--vellum-light);
+  border: 1px solid rgba(203, 157, 62, 0.35);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  width: 100%;
+}
+
+/* ---------- Mobile "options" toggle button ---------- */
+.topbar__options-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(203, 157, 62, 0.35);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: var(--vellum-light);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  cursor: pointer;
+  max-width: 46vw;
+}
+.topbar__options-summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topbar__options-caret {
+  color: var(--gold);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+.topbar__options-caret.is-open {
+  transform: rotate(180deg);
+}
+
+/* ---------- Mobile controls panel (hidden by default) ---------- */
+.topbar__controls--mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .topbar__row {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  .topbar__burger {
+    display: flex;
+  }
+  .topbar__title {
+    font-size: 19px;
+    letter-spacing: 0.1em;
+  }
+  .topbar__controls--desktop {
+    display: none;
+  }
+  .topbar__options-toggle {
+    display: flex;
+  }
+
+  .topbar__controls--mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    border-top: 0px solid rgba(203, 157, 62, 0.25);
+    border-bottom: 3px solid var(--gold);
+    transition: max-height 0.22s ease, padding 0.22s ease, border-width 0.22s ease;
+    background: var(--indigo-deep);
+    box-shadow: var(--shadow);
+  }
+  .topbar__controls--mobile.is-open {
+    max-height: 220px;
+    padding: 16px 20px 20px;
+    border-top-width: 1px;
+  }
+
+  .topbar__mobile-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .topbar__mobile-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+  .topbar__group--mobile {
+    width: 100%;
+  }
+  .topbar__group--mobile .topbar__pill {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar__title {
+    font-size: 16px;
+  }
+  .topbar__options-summary {
+    max-width: 30vw;
+  }
+}

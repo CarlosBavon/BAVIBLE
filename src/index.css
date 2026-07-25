@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:wght@400;500;600&display=swap");
+
+/* ---------------------------------------------------------
+   BAVIBLE — design tokens
+   Palette drawn from the scriptorium: scraped vellum,
+   iron-gall ink, oxblood rubric, beaten gold leaf,
+   and the deep indigo used for illuminated capitals.
+--------------------------------------------------------- */
+:root {
+  --ink: #241a12;
+  --ink-soft: #4a3c2c;
+  --vellum: #e9dcb8;
+  --vellum-light: #f6efd9;
+  --vellum-dark: #d8c797;
+  --oxblood: #7c2331;
+  --oxblood-deep: #591722;
+  --gold: #a9812b;
+  --gold-bright: #cb9d3e;
+  --indigo: #232349;
+  --indigo-deep: #14142b;
+  --line: rgba(36, 26, 18, 0.18);
+  --line-strong: rgba(36, 26, 18, 0.35);
+  --shadow: 0 12px 32px rgba(20, 14, 8, 0.28);
+
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-display-deco: "Cinzel Decorative", "Cinzel", serif;
+  --font-body: "EB Garamond", "Georgia", serif;
+  --font-ui: "Spectral", "Georgia", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--indigo-deep);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--gold-bright);
+  color: var(--ink);
+}
+
+/* visible keyboard focus, everywhere */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
