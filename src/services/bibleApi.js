@@ -46,8 +46,6 @@ async function fetchWithTimeout(url, ms = REQUEST_TIMEOUT_MS) {
  * CORS proxy before giving up.
  */
 async function fetchJson(url, { label } = {}) {
-  let lastError;
-
   for (const proxy of PROXIES) {
     try {
       const res = await fetchWithTimeout(proxy(url));
@@ -58,8 +56,6 @@ async function fetchJson(url, { label } = {}) {
 
       return await res.json();
     } catch (err) {
-      lastError = err;
-
       if (err instanceof HttpError) {
         throw err;
       }
