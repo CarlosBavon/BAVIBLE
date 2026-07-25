@@ -56,7 +56,7 @@ registerRoute(
 const scriptureApiMatch = ({ url }) =>
   url.origin === "https://bible-api.com" ||
   url.origin === "https://thedouayrheims.com" ||
-  url.origin === "https://api.allorigins.win"; // CORS-proxy fallback used by the app
+  url.origin === "https://api.allorigins.win" ||
   url.origin === "https://corsproxy.io";
 
 registerRoute(
