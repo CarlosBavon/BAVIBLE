@@ -7,7 +7,7 @@
 
 import { clientsClaim } from "workbox-core";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
-import { registerRoute, NavigationRoute } from "workbox-routing";
+import { registerRoute } from "workbox-routing";
 import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from "workbox-strategies";
 import { ExpirationPlugin } from "workbox-expiration";
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
