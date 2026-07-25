@@ -14,7 +14,7 @@
 // keeps working without you having to run your own backend.
 
 const KJV_BASE = "https://bible-api.com";
-const DR_BASE = "https://thedouayrheims.com";
+const DR_BASE = "";
 const REQUEST_TIMEOUT_MS = 12000;
 const PROXIES = [
   (url) => url, // direct
